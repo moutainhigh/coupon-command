@@ -1,0 +1,39 @@
+app:
+  project: bait
+  name: coupon
+  role: command
+  descriptions: "卡券模块前台服务command"
+  cluster-name: moses
+
+spring:
+  profiles:
+    include:
+    - web
+    - swagger
+    - locale
+    - logging
+    - axon-jgroups
+    - axon-amqp
+    - axon-eventstore
+#   - axon-scheduler
+#   - axon-saga
+
+axon:
+  eventstore:
+    aggregate-package: cn.vpclub.coupon.command.aggregates
+
+logging:
+  level:
+    org.jgroups: debug
+    cn.vpclub.coupon.command: info
+
+jwt:
+  enabled: true
+  filterMappings:
+    - /o2oCoupon/*
+
+grpc:
+  client:
+    order-query:
+      server-host: order-query.moses-${spring.profiles.active}
+      enable-keep-alive: false

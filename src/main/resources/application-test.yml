@@ -1,0 +1,8 @@
+logging:
+  level:
+    cn.vpclub.moses: debug
+    cn.vpclub.coupon.command: info
+
+app:
+   youku:
+      keyFilepath: /java-testMer.key.p8

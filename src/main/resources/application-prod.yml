@@ -1,0 +1,11 @@
+logging:
+  level:
+    cn.vpclub.coupon.command: info
+
+spring:
+  rabbitmq:
+    host: rabbit-prod
+
+app:
+  youku:
+    keyFilepath: /96800008_yunnanyidong.key.p8

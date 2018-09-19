@@ -1,0 +1,28 @@
+axon:
+  distributed:
+    jgroups:
+      configuration-file: jgroups/udp.xml
+
+server:
+  port: 9091
+
+logging:
+  level:
+    cn.vpclub.moses: debug
+    cn.vpclub.coupon.command: debug
+
+spring:
+  rabbitmq:
+    host: rabbit-local
+
+grpc:
+  client:
+    coupon-query:
+      enable-keep-alive: true
+      keep-alive-delay: 5 # seconds
+      server-host: localhost
+      server-port: 7575
+
+app:
+   youku:
+      keyFilepath: /java-testMer.key.p8
